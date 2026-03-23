@@ -68,6 +68,9 @@ class LRUCache(object):
         if node == self.tail:
             self.tail = node.prev
 
+        node.prev = None
+        node.next = None
+
     def move_to_head(self, node):
         self.remove_node(node)
         self.add_node(node)
